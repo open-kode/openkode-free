@@ -1,0 +1,62 @@
+# OpenKode Project Policy
+# ──────────────────────────────────────────────────────────────────────────────
+# This file controls how OpenKode behaves in this repository.
+# Commit it to version control so the whole team shares the same settings.
+# All fields are optional — missing fields fall back to sensible defaults.
+# Docs: https://openkode.dev/docs/policy
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Adoption maturity level for this repo.
+# Controls which capabilities are enabled and what guardrails apply.
+# Levels: observe | assisted-plan | selective-execute | full-orchestration
+maturityLevel: assisted-plan
+
+# Gates that must pass before any change is considered "release-ready".
+# OpenKode will run these in order and surface failures in the UI.
+requiredChecks:
+  - lint
+  - typecheck
+  - test:unit
+
+verification:
+  # Minimum test coverage percentage (0–100). Fails gate if below this.
+  minCoverage: 70
+  # Risk tolerance: low | medium | high
+  # At 'low', any medium-risk finding blocks the run.
+  riskThreshold: medium
+  # Whether a security finding (any severity) blocks the run.
+  failOnSecurityFindings: true
+
+budget:
+  # Maximum USD spend per single execution run (0 = unlimited).
+  perRunUsd: 0
+  # Maximum USD spend per spec/feature (0 = unlimited).
+  perSpecUsd: 0
+  # If true, execution halts when the budget is exceeded.
+  # If false, a warning is shown but execution continues.
+  hardStop: false
+
+routing:
+  # Primary LLM provider for all tasks.
+  # Values: openai | anthropic | gemini | azure | custom
+  preferredProvider: openai
+  # Ordered fallback providers if the primary is unavailable or over budget.
+  fallbackProviders:
+    - anthropic
+  # Override the provider for specific task types.
+  # Useful for routing planning to a reasoning-heavy model.
+  taskOverrides: {}
+  #   plan: anthropic
+  #   verify: openai
+  #   review: anthropic
+
+security:
+  # Security posture: strict | standard | permissive
+  # 'strict'     — block on any OWASP finding, require auth review on all API changes
+  # 'standard'   — block on high/critical findings only
+  # 'permissive' — warn only, never block
+  posture: standard
+  # Regex patterns that, if found in generated code, will trigger a security finding.
+  blockedPatterns: []
+  #   - "eval\\("
+  #   - "exec\\("

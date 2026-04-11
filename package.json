@@ -1,0 +1,464 @@
+{
+  "name": "openkode-free",
+  "displayName": "OpenKode Free — Local-first Spec-Driven AI",
+  "description": "Local-first SDD orchestration layer. Plan → Execute → Verify above Cursor, Claude Code & Windsurf using your own local LLM (Ollama/LM Studio). Upgrade to Pro for cloud + team features.",
+  "version": "0.1.0-beta",
+  "publisher": "openkode",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openkode/openkode-free"
+  },
+  "homepage": "https://github.com/openkode/openkode-free#readme",
+  "bugs": {
+    "url": "https://github.com/openkode/openkode-free/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Machine Learning",
+    "Programming Languages",
+    "Education",
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "spec-driven development",
+    "sdd",
+    "orchestration",
+    "byo-llm",
+    "local llm",
+    "ollama",
+    "cursor",
+    "claude",
+    "windsurf",
+    "agent handoff",
+    "verification",
+    "code review",
+    "planning",
+    "openkode"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "icon": "src/assets/logo/ok.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "openkode.openUI",
+        "title": "Open OpenKode UI",
+        "category": "OpenKode",
+        "icon": "$(layout)"
+      },
+      {
+        "command": "openkode.selectLlmProvider",
+        "title": "Select LLM Provider",
+        "category": "OpenKode"
+      },
+      {
+        "command": "openkode.testLlmRouter",
+        "title": "Test LLM Router",
+        "category": "OpenKode"
+      },
+      {
+        "command": "openkode.showModelProfiles",
+        "title": "Manage Model Profiles…",
+        "category": "OpenKode",
+        "icon": "$(list-selection)"
+      },
+      {
+        "command": "openkode.applyRocketProfile",
+        "title": "Apply Rocket Profile",
+        "category": "OpenKode"
+      },
+      {
+        "command": "openkode.handoffToCursor",
+        "title": "Handoff to Cursor",
+        "category": "OpenKode",
+        "icon": "$(export)"
+      },
+      {
+        "command": "openkode.handoffToClaudeCode",
+        "title": "Handoff to Claude Code",
+        "category": "OpenKode",
+        "icon": "$(export)"
+      },
+      {
+        "command": "openkode.handoffToWindsurf",
+        "title": "Handoff to Windsurf",
+        "category": "OpenKode",
+        "icon": "$(export)"
+      },
+      {
+        "command": "openkode.handoffToCustomAgent",
+        "title": "Handoff to Custom Agent…",
+        "category": "OpenKode",
+        "icon": "$(export)"
+      },
+      {
+        "command": "openkode.testAgentHandoff",
+        "title": "Test Agent Handoff (Rocket → Cursor)",
+        "category": "OpenKode"      },
+      {
+        "command": "openkode.runVerification",
+        "title": "Run Verification",
+        "category": "OpenKode",
+        "icon": "$(pass)"
+      },
+      {
+        "command": "openkode.showVerificationReport",
+        "title": "Show Verification Report",
+        "category": "OpenKode",
+        "icon": "$(checklist)"
+      },
+      {
+        "command": "openkode.toggleAutoVerify",
+        "title": "Toggle Auto-Verify on Save",
+        "category": "OpenKode"
+      },
+      {
+        "command": "openkode.testVerification",
+        "title": "Test Verification (Mock Diff)",
+        "category": "OpenKode"
+      },
+      {
+        "command": "openkode.showWelcome",
+        "title": "Welcome / Quick Start",
+        "category": "OpenKode",
+        "icon": "$(star)"
+      },
+      {
+        "command": "openkode.runFullSDDDemo",
+        "title": "Run Full SDD Demo Cycle",
+        "category": "OpenKode",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "openkode.sendFeedback",
+        "title": "Send Feedback / Report Issue",
+        "category": "OpenKode",
+        "icon": "$(comment)"
+      },
+      {
+        "command": "openkode.toggleTelemetry",
+        "title": "Toggle Anonymous Telemetry",
+        "category": "OpenKode"
+      }
+    ],
+    "views": {
+      "openkode-panel": [
+        {
+          "id": "openkode.sidebarPanel",
+          "name": "OpenKode",
+          "type": "webview",
+          "when": "openkode:enabled",
+          "retainContextWhenHidden": true
+        },
+        {
+          "id": "openkode.modelProfilesTree",
+          "name": "Model Profiles",
+          "type": "tree",
+          "when": "openkode:enabled"
+        },
+        {
+          "id": "openkode.verificationTree",
+          "name": "Verification",
+          "type": "tree",
+          "when": "openkode:enabled"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "openkode-panel",
+          "title": "OpenKode",
+          "icon": "out/openkode-icon.svg"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "OpenKode",
+      "properties": {
+        "openkode.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable OpenKode extension"
+        },
+        "openkode.aiProvider": {
+          "type": "string",
+          "enum": [
+            "openai",
+            "anthropic",
+            "gemini",
+            "azure",
+            "custom"
+          ],
+          "default": "openai",
+          "description": "AI provider for orchestration"
+        },
+        "openkode.model": {
+          "type": "string",
+          "default": "gpt-4",
+          "description": "AI model to use"
+        },
+        "openkode.logLevel": {
+          "type": "string",
+          "enum": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Logging level"
+        },
+        "openkode.llmProvider": {
+          "type": "string",
+          "enum": ["local", "cloud-key", "openkode-relay"],
+          "default": "local",
+          "description": "Primary LLM provider mode — local (Ollama/LM Studio/llama.cpp), cloud-key (your own API key), or openkode-relay (managed plan)"
+        },
+        "openkode.local.provider": {
+          "type": "string",
+          "enum": ["ollama", "lmstudio", "llamacpp"],
+          "default": "ollama",
+          "description": "Local LLM server to use"
+        },
+        "openkode.local.ollamaHost": {
+          "type": "string",
+          "default": "http://localhost:11434",
+          "description": "Ollama server base URL"
+        },
+        "openkode.local.lmstudioHost": {
+          "type": "string",
+          "default": "http://localhost:1234",
+          "description": "LM Studio server base URL"
+        },
+        "openkode.local.llamacppHost": {
+          "type": "string",
+          "default": "http://localhost:8080",
+          "description": "llama.cpp server base URL"
+        },
+        "openkode.local.model": {
+          "type": "string",
+          "default": "qwen2.5-coder:32b",
+          "description": "Local model name (e.g. qwen2.5-coder:32b for Ollama)"
+        },
+        "openkode.cloud.provider": {
+          "type": "string",
+          "enum": ["openai", "anthropic", "xai", "gemini"],
+          "default": "openai",
+          "description": "Cloud AI provider when using cloud-key mode"
+        },
+        "openkode.cloud.model": {
+          "type": "string",
+          "default": "claude-3.7-sonnet",
+          "description": "Cloud model name"
+        },
+        "openkode.modelProfiles": {
+          "type": "object",
+          "default": {
+            "Precision": { "mode": "cloud-key", "model": "claude-3.7-sonnet" },
+            "Blueprint": { "mode": "local", "model": "qwen2.5-coder:32b" },
+            "Visionary": { "mode": "cloud-key", "model": "claude-3.7-sonnet" },
+            "Rocket": { "mode": "local", "model": "qwen2.5-coder:32b" }
+          },
+          "description": "Per-workflow-mode recommended LLM profiles. Each key maps to a workflow mode; value has 'mode' (local/cloud-key/openkode-relay) and 'model' name."
+        },
+        "openkode.customAgent.commandTemplate": {
+          "type": "string",
+          "default": "",
+          "description": "Shell command template for the custom agent handoff. Use {{PROMPT_FILE}} as a placeholder for the temp file path containing the handoff prompt. Example: 'aider --message-file {{PROMPT_FILE}}'"
+        },
+        "openkode.customAgent.name": {
+          "type": "string",
+          "default": "Custom Agent",
+          "description": "Display name for your custom agent (shown in notifications and the handoff prompt header)."
+        },
+        "openkode.verification.autoVerifyOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically run the Verification Engine when files in the active phase are saved."
+        },
+        "openkode.verification.scoreThreshold": {
+          "type": "number",
+          "default": 70,
+          "description": "Minimum verification score (0\u2013100) before OpenKode raises a warning."
+        },
+        "openkode.telemetry.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Send anonymous usage events to help improve OpenKode. No code, prompts, or personal data is ever sent."
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "openkode.openUI",
+        "key": "ctrl+shift+o",
+        "mac": "cmd+shift+o",
+        "when": "openkode:enabled"
+      },
+      {
+        "command": "openkode.runVerification",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "openkode:enabled"
+      },
+      {
+        "command": "openkode.handoffToCursor",
+        "key": "ctrl+shift+h",
+        "mac": "cmd+shift+h",
+        "when": "openkode:enabled && editorFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "openkode/editor",
+          "group": "9_cutcopypaste@99",
+          "when": "openkode:enabled && editorHasSelection"
+        }
+      ],
+      "openkode/editor": [
+        {
+          "command": "openkode.handoffToCursor",
+          "group": "1_handoff@1"
+        },
+        {
+          "command": "openkode.handoffToClaudeCode",
+          "group": "1_handoff@2"
+        },
+        {
+          "command": "openkode.handoffToWindsurf",
+          "group": "1_handoff@3"
+        },
+        {
+          "command": "openkode.runVerification",
+          "group": "2_verify@1"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "openkode.openUI",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.selectLlmProvider",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.testLlmRouter",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.showModelProfiles",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.applyRocketProfile",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.handoffToCursor",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.handoffToClaudeCode",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.handoffToWindsurf",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.handoffToCustomAgent",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.testAgentHandoff",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.runVerification",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.showVerificationReport",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.toggleAutoVerify",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.testVerification",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.showWelcome",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.runFullSDDDemo",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.sendFeedback",
+          "when": "openkode:enabled"
+        },
+        {
+          "command": "openkode.toggleTelemetry",
+          "when": "openkode:enabled"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "openkode/editor",
+        "label": "OpenKode"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package:free",
+    "compile": "cross-env OPENKODE_EDITION=free node simple-build.js",
+    "compile:free": "cross-env OPENKODE_EDITION=free node simple-build.js",
+    "watch": "tsc --outDir out --module commonjs --target es2020 --watch",
+    "package": "npm run package:free",
+    "package:free": "cross-env NODE_ENV=production OPENKODE_EDITION=free node simple-build.js",
+    "vsce:free": "npm run package:free && vsce package --no-dependencies --out openkode-free-0.1.0-beta.vsix",
+    "lint": "eslint src --ext ts",
+    "test:unit": "jest --config jest.config.js",
+    "test:coverage": "jest --config jest.config.js --coverage",
+    "clean": "rimraf out",
+    "typecheck": "tsc --noEmit -p ./"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.19.11",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@google/generative-ai": "^0.24.1",
+    "@octokit/rest": "^22.0.1",
+    "@types/js-yaml": "^4.0.9",
+    "js-yaml": "^4.1.1",
+    "openai": "^6.25.0"
+  }
+}

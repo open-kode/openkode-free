@@ -1,0 +1,28 @@
+# Node
+node_modules/
+
+# Compiled output
+out/
+
+# VSIX packages
+*.vsix
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+
+# VS Code workspace settings (keep .vscode/launch.json and extensions.json for debugging)
+.vscode/settings.json
+
+# Environment files
+.env
+.env.local

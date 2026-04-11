@@ -1,0 +1,958 @@
+
+> openkode@0.1.0 typecheck
+> tsc --noEmit -p ./
+
+src/agent-handoff/agentRouter.ts(11,30): error TS6133: 'CommandResult' is declared but its value is never read.
+src/agent-handoff/agentRouter.ts(126,11): error TS6133: 'llm' is declared but its value is never read.
+src/agent-handoff/agentRouter.ts(404,37): error TS6133: 'request' is declared but its value is never read.
+src/agent-handoff/claudeCodeIntegration.ts(12,1): error TS6133: 'AgentConfig' is declared but its value is never read.
+src/agent-handoff/claudeCodeIntegration.ts(554,9): error TS6133: 'currentOutput' is declared but its value is never read.
+src/agent-handoff/cursorIntegration.ts(12,1): error TS6133: 'AgentConfig' is declared but its value is never read.
+src/agent-handoff/cursorIntegration.ts(650,34): error TS6133: 'reject' is declared but its value is never read.
+src/agent-handoff/customAgent.ts(13,43): error TS6133: 'ExecutionArtifact' is declared but its value is never read.
+src/agent-handoff/customAgent.ts(567,11): error TS6133: 'agentConfigs' is declared but its value is never read.
+src/agent-handoff/customAgent.ts(745,22): error TS7022: 'template' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+src/agent-handoff/customAgent.ts(745,50): error TS2448: Block-scoped variable 'template' used before its declaration.
+src/agent-handoff/customAgent.ts(842,70): error TS2345: Argument of type '{ confirmDangerous: boolean; dryRun: boolean; captureOutput: boolean; streamOutput: boolean; timeoutMs?: number; additionalEnvVars?: Record<string, string>; onProgress?: (progress: CustomAgentProgress) => void; }' is not assignable to parameter of type 'Required<CustomAgentExecutionOptions>'.
+  Types of property 'timeoutMs' are incompatible.
+    Type 'number | undefined' is not assignable to type 'number'.
+      Type 'undefined' is not assignable to type 'number'.
+src/agent-handoff/customAgent.ts(1043,43): error TS2345: Argument of type 'AgentConfig' is not assignable to parameter of type 'Record<string, unknown>'.
+  Index signature for type 'string' is missing in type 'AgentConfig'.
+src/agent-handoff/handoffProtocol.ts(503,12): error TS2352: Conversion of type 'OpenKodeEnvVars' to type 'Record<string, string>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type 'OpenKodeEnvVars'.
+src/agent-handoff/handoffProtocol.ts(600,11): error TS6133: 'promisify' is declared but its value is never read.
+src/agent-handoff/resultParser.ts(342,9): error TS2322: Type 'ExecutionMetadata' is not assignable to type 'Record<string, unknown>'.
+  Index signature for type 'string' is missing in type 'ExecutionMetadata'.
+src/codebase/astParser.ts(188,13): error TS6133: 'Parser' is declared but its value is never read.
+src/codebase/astParser.ts(188,35): error TS2307: Cannot find module 'tree-sitter' or its corresponding type declarations.
+src/codebase/astParser.ts(282,5): error TS6133: 'options' is declared but its value is never read.
+src/codebase/astParser.ts(409,5): error TS6133: 'content' is declared but its value is never read.
+src/codebase/astParser.ts(412,5): error TS6133: 'languageModule' is declared but its value is never read.
+src/codebase/astParser.ts(479,5): error TS6133: 'lines' is declared but its value is never read.
+src/codebase/astParser.ts(486,9): error TS7034: Variable 'match' implicitly has type 'any' in some locations where its type cannot be determined.
+src/codebase/astParser.ts(488,13): error TS6133: 'lineNum' is declared but its value is never read.
+src/codebase/astParser.ts(496,78): error TS7005: Variable 'match' implicitly has an 'any' type.
+src/codebase/astParser.ts(660,5): error TS6133: 'lines' is declared but its value is never read.
+src/codebase/astParser.ts(663,5): error TS6133: 'exports' is declared but its value is never read.
+src/codebase/astParser.ts(667,9): error TS7034: Variable 'match' implicitly has type 'any' in some locations where its type cannot be determined.
+src/codebase/astParser.ts(675,106): error TS7005: Variable 'match' implicitly has an 'any' type.
+src/codebase/astParser.ts(729,5): error TS6133: 'lines' is declared but its value is never read.
+src/codebase/astParser.ts(732,5): error TS6133: 'exports' is declared but its value is never read.
+src/codebase/astParser.ts(736,9): error TS7034: Variable 'match' implicitly has type 'any' in some locations where its type cannot be determined.
+src/codebase/astParser.ts(747,49): error TS7005: Variable 'match' implicitly has an 'any' type.
+src/codebase/astParser.ts(800,5): error TS6133: 'lines' is declared but its value is never read.
+src/codebase/astParser.ts(803,5): error TS6133: 'exports' is declared but its value is never read.
+src/codebase/astParser.ts(887,5): error TS6133: 'lines' is declared but its value is never read.
+src/codebase/astParser.ts(890,5): error TS6133: 'exports' is declared but its value is never read.
+src/codebase/astParser.ts(976,26): error TS6133: 'result' is declared but its value is never read.
+src/codebase/astParser.ts(976,47): error TS6133: 'location' is declared but its value is never read.
+src/codebase/contextAssembler.ts(10,35): error TS6133: 'FileContext' is declared but its value is never read.
+src/codebase/contextAssembler.ts(12,27): error TS6133: 'DependencyNode' is declared but its value is never read.
+src/codebase/contextAssembler.ts(14,23): error TS6133: 'SymbolEntry' is declared but its value is never read.
+src/codebase/contextAssembler.ts(527,32): error TS6133: 'file' is declared but its value is never read.
+src/codebase/contextAssembler.ts(527,48): error TS6133: 'context' is declared but its value is never read.
+src/codebase/contextAssembler.ts(738,55): error TS6133: 'config' is declared but its value is never read.
+src/codebase/contextAssembler.ts(753,58): error TS6133: 'config' is declared but its value is never read.
+src/codebase/contextAssembler.ts(768,53): error TS6133: 'config' is declared but its value is never read.
+src/codebase/contextAssembler.ts(783,56): error TS6133: 'config' is declared but its value is never read.
+src/codebase/contextAssembler.ts(799,56): error TS6133: 'config' is declared but its value is never read.
+src/codebase/contextAssembler.ts(814,57): error TS6133: 'config' is declared but its value is never read.
+src/codebase/dependencyGraph.ts(10,21): error TS6133: 'ImportInfo' is declared but its value is never read.
+src/codebase/fileDiscovery.ts(312,23): error TS6133: 'error' is declared but its value is never read.
+src/codebase/fileDiscovery.ts(401,26): error TS6133: 'pattern' is declared but its value is never read.
+src/codebase/fileDiscovery.ts(642,28): error TS2339: Property 'imports' does not exist on type 'FileInfo'.
+src/codebase/fileDiscovery.ts(642,41): error TS7006: Parameter 'imp' implicitly has an 'any' type.
+src/codebase/index.ts(325,5): error TS2740: Type 'Record<string, number>' is missing the following properties from type 'string[]': length, pop, push, concat, and 29 more.
+src/codebase/symbolIndex.ts(9,49): error TS6133: 'ReferenceInfo' is declared but its value is never read.
+src/codebase/symbolIndex.ts(124,11): error TS6133: 'rootPath' is declared but its value is never read.
+src/codebase/symbolIndex.ts(665,40): error TS6133: 'entry' is declared but its value is never read.
+src/codebase/symbolIndex.ts(683,13): error TS2322: Type '"reference"' is not assignable to type '"import" | "call" | "read" | "write" | "inheritance"'.
+src/codebase/symbolIndex.ts(871,3): error TS6133: 'options' is declared but its value is never read.
+src/codebase/vectorSearch.ts(9,1): error TS6133: 'path' is declared but its value is never read.
+src/codebase/vectorSearch.ts(165,70): error TS2345: Argument of type '{ chunkSize: number; chunkOverlap: number; includeSymbols: boolean; includeComments: boolean; maxTokensPerChunk: number; embeddingProvider: "local" | "openai" | "cohere" | "huggingface"; embeddingModel?: string; apiKey?: string; }' is not assignable to parameter of type 'Required<IndexOptions>'.
+  Types of property 'embeddingModel' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/core/openkode.ts(38,3): error TS6133: 'handleError' is declared but its value is never read.
+src/core/openkode.ts(55,3): error TS6133: 'Phase' is declared but its value is never read.
+src/core/openkode.ts(56,3): error TS6133: 'Ticket' is declared but its value is never read.
+src/core/openkode.ts(64,3): error TS6133: 'RoutingStrategy' is declared but its value is never read.
+src/core/openkode.ts(65,3): error TS6133: 'AgentRole' is declared but its value is never read.
+src/core/openkode.ts(76,3): error TS6133: 'ExecutionResult' is declared but its value is never read.
+src/core/openkode.ts(77,3): error TS6133: 'HandoffPayload' is declared but its value is never read.
+src/core/openkode.ts(80,25): error TS6133: 'AgentConfig' is declared but its value is never read.
+src/core/openkode.ts(220,11): error TS6133: 'contextManager' is declared but its value is never read.
+src/core/openkode.ts(221,11): error TS6133: 'stateManager' is declared but its value is never read.
+src/core/openkode.ts(225,11): error TS6133: 'agentRegistry' is declared but its value is never read.
+src/core/openkode.ts(231,11): error TS6133: 'contextAssembler' is declared but its value is never read.
+src/core/openkode.ts(259,25): error TS2554: Expected 1 arguments, but got 0.
+src/core/openkode.ts(266,26): error TS2554: Expected 1 arguments, but got 0.
+src/core/openkode.ts(267,24): error TS2554: Expected 1 arguments, but got 0.
+src/core/openkode.ts(268,32): error TS2304: Cannot find name 'DependencyGraph'.
+src/core/openkode.ts(269,29): error TS2554: Expected 1 arguments, but got 0.
+src/core/openkode.ts(422,32): error TS2339: Property 'discover' does not exist on type 'FileDiscovery'.
+src/core/openkode.ts(425,30): error TS2339: Property 'build' does not exist on type 'SymbolIndex'.
+src/core/openkode.ts(428,34): error TS2339: Property 'build' does not exist on type 'DependencyGraphBuilder'.
+src/core/orchestrator.ts(46,11): error TS6133: 'symbolIndex' is declared but its value is never read.
+src/core/orchestrator.ts(47,11): error TS6133: 'tacticalPlanner' is declared but its value is never read.
+src/core/orchestrator.ts(48,11): error TS6133: 'contextManager' is declared but its value is never read.
+src/core/orchestrator.ts(51,11): error TS6133: 'llmConfig' is declared but its value is never read.
+src/core/orchestrator.ts(204,13): error TS2339: Property 'id' does not exist on type 'ImplementationStep'.
+src/core/orchestrator.ts(206,17): error TS2339: Property 'filePath' does not exist on type 'ImplementationStep'.
+src/core/orchestrator.ts(207,17): error TS2339: Property 'action' does not exist on type 'ImplementationStep'.
+src/core/orchestrator.ts(296,55): error TS2339: Property 'content' does not exist on type 'FileInfo'.
+src/core/orchestrator.ts(298,53): error TS2339: Property 'content' does not exist on type 'FileInfo'.
+src/core/orchestrator.ts(300,57): error TS2339: Property 'content' does not exist on type 'FileInfo'.
+src/core/orchestrator.ts(311,50): error TS2339: Property 'targetPath' does not exist on type 'string'.
+src/core/terminalController.ts(12,1): error TS6133: 'path' is declared but its value is never read.
+src/core/terminalController.ts(163,11): error TS7022: 'process' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+src/core/terminalController.ts(165,12): error TS2448: Block-scoped variable 'process' used before its declaration.
+src/core/workflowModes.ts(15,43): error TS6133: 'Task' is declared but its value is never read.
+src/core/workflowModes.ts(15,49): error TS6133: 'DecompositionResult' is declared but its value is never read.
+src/core/workflowModes.ts(16,27): error TS6133: 'HandoffPayload' is declared but its value is never read.
+src/core/workflowModes.ts(418,56): error TS6133: 'phase' is declared but its value is never read.
+src/core/workflowModes.ts(474,29): error TS6133: 'intent' is declared but its value is never read.
+src/core/workflowModes.ts(487,30): error TS6133: 'plan' is declared but its value is never read.
+src/core/workflowModes.ts(489,5): error TS2739: Type '{ id: string; name: string; type: "custom"; version: string; execution: { command: string; args: string[]; timeoutMs: number; envVars: {}; shell: string; }; }' is missing the following properties from type 'AgentConfig': description, capabilities, enabled, priority
+src/core/workflowModes.ts(737,7): error TS2739: Type '{ id: string; name: string; type: "custom"; version: string; execution: { command: string; args: string[]; timeoutMs: number; envVars: {}; shell: string; }; }' is missing the following properties from type 'AgentConfig': description, capabilities, enabled, priority
+src/core/workflowModes.ts(750,7): error TS2739: Type '{ id: string; name: string; type: "custom"; version: string; execution: { command: string; args: string[]; timeoutMs: number; envVars: {}; shell: string; }; }' is missing the following properties from type 'AgentConfig': description, capabilities, enabled, priority
+src/core/workflowModes.ts(763,7): error TS2739: Type '{ id: string; name: string; type: "custom"; version: string; execution: { command: string; args: string[]; timeoutMs: number; envVars: {}; shell: string; }; }' is missing the following properties from type 'AgentConfig': description, capabilities, enabled, priority
+src/core/workflowModes.ts(903,54): error TS6133: 'intent' is declared but its value is never read.
+src/core/workflowModes.ts(1045,7): error TS2739: Type '{ id: string; name: string; type: "custom"; version: string; execution: { command: string; args: string[]; timeoutMs: number; envVars: {}; shell: string; }; }' is missing the following properties from type 'AgentConfig': description, capabilities, enabled, priority
+src/core/workflowModes.ts(1058,7): error TS2739: Type '{ id: string; name: string; type: "custom"; version: string; execution: { command: string; args: string[]; timeoutMs: number; envVars: {}; shell: string; }; }' is missing the following properties from type 'AgentConfig': description, capabilities, enabled, priority
+src/core/workflowModes.ts(1071,7): error TS2739: Type '{ id: string; name: string; type: "custom"; version: string; execution: { command: string; args: string[]; timeoutMs: number; envVars: {}; shell: string; }; }' is missing the following properties from type 'AgentConfig': description, capabilities, enabled, priority
+src/core/workflowModes.ts(1394,5): error TS6133: 'currentResult' is declared but its value is never read.
+src/core/workflowModes.ts(1399,11): error TS6133: 'adjustedOptions' is declared but its value is never read.
+src/extension.ts(326,10): error TS6133: 'logDebug' is declared but its value is never read.
+src/extension.ts(338,10): error TS6133: 'logWarn' is declared but its value is never read.
+src/orchestration/contextManager.ts(366,9): error TS6133: 'inComment' is declared but its value is never read.
+src/orchestration/contextManager.ts(375,11): error TS6133: 'commentPatterns' is declared but its value is never read.
+src/orchestration/contextManager.ts(449,43): error TS6133: 'type' is declared but its value is never read.
+src/orchestration/contextManager.ts(678,37): error TS6133: 'targetTokens' is declared but its value is never read.
+src/orchestration/index.ts(148,59): error TS6133: 'WorkflowStatus' is declared but its value is never read.
+src/orchestration/index.ts(150,26): error TS6133: 'ContextBudget' is declared but its value is never read.
+src/orchestration/index.ts(151,69): error TS6133: 'LLMProvider' is declared but its value is never read.
+src/orchestration/index.ts(239,11): error TS2322: Type '{ role: string; content: string; }[]' is not assignable to type 'Message[]'.
+  Type '{ role: string; content: string; }' is not assignable to type 'Message'.
+    Types of property 'role' are incompatible.
+      Type 'string' is not assignable to type '"system" | "user" | "assistant" | "tool"'.
+src/orchestration/index.ts(250,9): error TS2345: Argument of type 'ModelProvider' is not assignable to parameter of type 'LLMProvider | undefined'.
+src/orchestration/index.ts(257,9): error TS2345: Argument of type 'ModelProvider' is not assignable to parameter of type 'LLMProvider | undefined'.
+src/orchestration/index.ts(266,36): error TS2345: Argument of type 'ModelProvider' is not assignable to parameter of type 'LLMProvider'.
+src/orchestration/index.ts(304,11): error TS2353: Object literal may only specify known properties, and 'correlationId' does not exist in type 'RoutingContext'.
+src/orchestration/index.ts(306,9): error TS2322: Type '"balanced"' is not assignable to type 'RoutingStrategy | undefined'.
+src/orchestration/index.ts(353,28): error TS2339: Property 'totalCost' does not exist on type 'number | { totalCost: number; requestCount: number; averageCost: number; sessionCount: number; }'.
+  Property 'totalCost' does not exist on type 'number'.
+src/orchestration/index.ts(354,7): error TS2322: Type '{ totalRequests: number; successfulRequests: number; failedRequests: number; averageLatencyMs: number; averageTtftMs: number; totalRetries: number; } | { totalRequests: number; successfulRequests: number; failedRequests: number; averageLatencyMs: number; averageTtftMs: number; totalRetries: number; }' is not assignable to type '{ costs: { totalCost: number; requestCount: number; averageCost: number; sessionCount: number; }; metrics: { totalRequests: number; successfulRequests: number; failedRequests: number; averageLatencyMs: number; averageTtftMs: number; totalRetries: number; }; }'.
+  Type '{ totalRequests: number; successfulRequests: number; failedRequests: number; averageLatencyMs: number; averageTtftMs: number; totalRetries: number; }' is missing the following properties from type '{ costs: { totalCost: number; requestCount: number; averageCost: number; sessionCount: number; }; metrics: { totalRequests: number; successfulRequests: number; failedRequests: number; averageLatencyMs: number; averageTtftMs: number; totalRetries: number; }; }': costs, metrics
+src/orchestration/modelClient.ts(12,1): error TS6133: 'Readable' is declared but its value is never read.
+src/orchestration/modelClient.ts(198,20): error TS6133: 'provider' is declared but its value is never read.
+src/orchestration/modelClient.ts(519,22): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(520,26): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(521,21): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(522,22): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(528,11): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(529,14): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(530,16): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(531,13): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(532,22): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(534,19): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(538,38): error TS6133: 'sessionId' is declared but its value is never read.
+src/orchestration/modelClient.ts(671,22): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(672,26): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(673,22): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(673,56): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(679,11): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(680,14): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(681,16): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(682,13): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(683,22): error TS18046: 'data' is of type 'unknown'.
+src/orchestration/modelClient.ts(688,38): error TS6133: 'sessionId' is declared but its value is never read.
+src/orchestration/parallelExecutor.ts(12,30): error TS2307: Cannot find module 'uuid' or its corresponding type declarations.
+src/orchestration/parallelExecutor.ts(18,45): error TS6133: 'R' is declared but its value is never read.
+src/orchestration/parallelExecutor.ts(170,11): error TS6133: 'startTime' is declared but its value is never read.
+src/orchestration/parallelExecutor.ts(534,11): error TS6133: 'completedIds' is declared but its value is never read.
+src/orchestration/parallelExecutor.ts(559,5): error TS6133: 'context' is declared but its value is never read.
+src/orchestration/parallelExecutor.ts(629,11): error TS6133: 'totalWeight' is declared but its value is never read.
+src/orchestration/router.ts(575,30): error TS6133: 'model' is declared but its value is never read.
+src/orchestration/router.ts(595,57): error TS6133: 'task' is declared but its value is never read.
+src/orchestration/stateManager.ts(728,21): error TS6133: 'workflow' is declared but its value is never read.
+src/spec/decomposer.ts(347,15): error TS6133: 'intent' is declared but its value is never read.
+src/spec/decomposer.ts(431,15): error TS6133: 'intent' is declared but its value is never read.
+src/spec/decomposer.ts(473,15): error TS6133: 'intent' is declared but its value is never read.
+src/spec/decomposer.ts(743,60): error TS2345: Argument of type '"review"' is not assignable to parameter of type 'TicketType'.
+src/spec/decomposer.ts(752,53): error TS2345: Argument of type '"review"' is not assignable to parameter of type 'TicketType'.
+src/spec/decomposer.ts(794,54): error TS2345: Argument of type '"review"' is not assignable to parameter of type 'TicketType'.
+src/spec/index.ts(139,43): error TS6133: 'SpecVersion' is declared but its value is never read.
+src/spec/index.ts(140,21): error TS6133: 'SpecIndexEntry' is declared but its value is never read.
+src/spec/index.ts(350,63): error TS2345: Argument of type 'CapturedIntent | undefined' is not assignable to parameter of type 'CapturedIntent'.
+  Type 'undefined' is not assignable to type 'CapturedIntent'.
+src/spec/specStore.ts(11,1): error TS6192: All imports in import declaration are unused.
+src/spec/specStore.ts(12,1): error TS6192: All imports in import declaration are unused.
+src/spec/specStore.ts(13,1): error TS6133: 'TacticalPlan' is declared but its value is never read.
+src/spec/specStore.ts(302,11): error TS6133: 'getIndexPath' is declared but its value is never read.
+src/spec/specStore.ts(403,18): error TS2345: Argument of type '{}' is not assignable to parameter of type 'string'.
+src/spec/specStore.ts(752,17): error TS6133: 'id' is declared but its value is never read.
+src/spec/specValidator.ts(10,31): error TS6133: 'IntentInput' is declared but its value is never read.
+src/spec/specValidator.ts(11,16): error TS6133: 'Phase' is declared but its value is never read.
+src/spec/specValidator.ts(11,23): error TS6133: 'Ticket' is declared but its value is never read.
+src/spec/specValidator.ts(11,31): error TS6133: 'Task' is declared but its value is never read.
+src/spec/specValidator.ts(12,24): error TS6133: 'FileChange' is declared but its value is never read.
+src/spec/specValidator.ts(12,36): error TS6133: 'InterfaceDefinition' is declared but its value is never read.
+src/spec/specValidator.ts(374,34): error TS2353: Object literal may only specify known properties, and 'format' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(375,34): error TS2353: Object literal may only specify known properties, and 'format' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(388,7): error TS2353: Object literal may only specify known properties, and 'minItems' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(392,7): error TS2353: Object literal may only specify known properties, and 'minItems' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(397,7): error TS2353: Object literal may only specify known properties, and 'minItems' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(422,36): error TS2353: Object literal may only specify known properties, and 'minItems' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(426,34): error TS2353: Object literal may only specify known properties, and 'format' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(427,35): error TS2353: Object literal may only specify known properties, and 'format' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(449,34): error TS2353: Object literal may only specify known properties, and 'format' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(452,7): error TS2353: Object literal may only specify known properties, and 'minItems' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(468,7): error TS2353: Object literal may only specify known properties, and 'minItems' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(474,7): error TS2353: Object literal may only specify known properties, and 'minItems' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(480,7): error TS2353: Object literal may only specify known properties, and 'minItems' does not exist in type 'SchemaProperty'.
+src/spec/specValidator.ts(523,9): error TS2322: Type '(intent: CapturedIntent) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'intent' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'CapturedIntent'.
+src/spec/specValidator.ts(550,9): error TS2322: Type '(intent: CapturedIntent) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'intent' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'CapturedIntent'.
+src/spec/specValidator.ts(570,9): error TS2322: Type '(intent: CapturedIntent) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'intent' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'CapturedIntent'.
+src/spec/specValidator.ts(594,9): error TS2322: Type '(prd: PRD) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'prd' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'PRD'.
+src/spec/specValidator.ts(614,9): error TS2322: Type '(prd: PRD) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'prd' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'PRD'.
+src/spec/specValidator.ts(638,9): error TS2322: Type '(epic: Epic) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'epic' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'Epic'.
+src/spec/specValidator.ts(658,9): error TS2322: Type '(epic: Epic) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'epic' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'Epic'.
+src/spec/specValidator.ts(681,9): error TS2322: Type '(plan: TacticalPlan) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'plan' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'TacticalPlan'.
+src/spec/specValidator.ts(701,9): error TS2322: Type '(plan: TacticalPlan) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'plan' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'TacticalPlan'.
+src/spec/specValidator.ts(723,9): error TS2322: Type '(plan: TacticalPlan) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }' is not assignable to type '(spec: unknown) => { valid: boolean; errors: ValidationError[]; warnings: ValidationWarning[]; }'.
+  Types of parameters 'plan' and 'spec' are incompatible.
+    Type 'unknown' is not assignable to type 'TacticalPlan'.
+src/spec/tacticalPlanner.ts(13,18): error TS6133: 'Task' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(13,24): error TS6133: 'Phase' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(721,53): error TS6133: 'context' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(852,5): error TS6133: 'context' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(896,5): error TS6133: 'context' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(912,5): error TS6133: 'context' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(1010,5): error TS6133: 'context' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(1135,5): error TS6133: 'analysis' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(1220,49): error TS6133: 'context' is declared but its value is never read.
+src/spec/tacticalPlanner.ts(1288,40): error TS6133: 'testSpecs' is declared but its value is never read.
+src/ui/mainPanel.ts(36,22): error TS6133: '_extensionUri' is declared but its value is never read.
+src/ui/planViewer.ts(9,1): error TS6133: 'path' is declared but its value is never read.
+src/ui/planViewer.ts(11,20): error TS6133: 'PlanPhase' is declared but its value is never read.
+src/ui/sidebarPanel.ts(13,1): error TS6133: 'VibeEngine' is declared but its value is never read.
+src/ui/sidebarPanel.ts(15,35): error TS6133: 'ChatMessage' is declared but its value is never read.
+src/ui/sidebarPanel.ts(55,9): error TS6133: 'context' is declared but its value is never read.
+src/ui/sidebarPanel.ts(419,22): error TS6133: 'webview' is declared but its value is never read.
+src/ui/verificationPanel.ts(184,41): error TS2345: Argument of type '{ severity?: string | undefined; status?: string | undefined; searchQuery?: string | undefined; }' is not assignable to parameter of type '{ severity?: IssueSeverity | undefined; status?: string | undefined; }'.
+  Types of property 'severity' are incompatible.
+    Type 'string | undefined' is not assignable to type 'IssueSeverity | undefined'.
+      Type 'string' is not assignable to type 'IssueSeverity | undefined'.
+src/ui/webview/PhaseList.tsx(8,36): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/ui/webview/PhaseList.tsx(60,5): error TS7031: Binding element 'phase' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(61,5): error TS7031: Binding element 'isSelected' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(62,5): error TS7031: Binding element 'isExpanded' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(63,5): error TS7031: Binding element 'onSelect' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(64,5): error TS7031: Binding element 'onExpand' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(65,5): error TS7031: Binding element 'onExecute' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(86,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(86,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(90,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(90,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(93,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(93,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(98,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(98,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(98,70): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(99,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(101,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(101,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(101,70): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(105,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(105,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(105,92): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(108,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(108,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(109,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(109,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(109,68): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(110,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(110,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(112,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(112,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(113,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(113,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(113,73): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(114,55): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(115,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(118,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(118,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(119,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(119,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(119,74): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(121,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(124,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(124,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(125,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(125,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(125,70): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(127,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(129,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(130,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(133,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(133,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(140,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(140,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(140,75): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(142,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(142,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(142,61): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(144,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(145,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(149,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(149,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(151,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(151,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(151,83): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(156,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(156,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(157,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(157,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(157,40): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(158,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(158,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(159,52): error TS7006: Parameter 'ticket' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(160,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(160,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(164,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(164,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(170,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(171,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(171,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(171,84): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(172,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(174,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(175,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(180,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(180,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(181,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(181,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(181,38): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(182,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(182,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(183,51): error TS7006: Parameter 'file' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(183,57): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(184,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(184,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(185,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(185,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(185,82): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(186,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(186,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(186,53): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(187,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(189,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(190,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(195,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(195,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(196,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(196,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(196,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(197,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(197,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(198,58): error TS7006: Parameter 'dep' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(198,63): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(199,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(199,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(200,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(200,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(200,77): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(201,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(201,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(201,52): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(202,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(204,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(205,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(207,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(209,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(217,5): error TS7031: Binding element 'phases' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(218,5): error TS7031: Binding element 'selectedPhase' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(219,5): error TS7031: Binding element 'expandedPhases' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(220,5): error TS7031: Binding element 'onSelect' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(221,5): error TS7031: Binding element 'onExpand' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(222,5): error TS7031: Binding element 'onExecute' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(226,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(226,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(227,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(227,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(228,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(228,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(228,58): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(229,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(229,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(229,39): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(231,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(231,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(231,89): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(233,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(234,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(239,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(239,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(240,25): error TS7006: Parameter 'phase' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(241,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(251,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(264,5): error TS7031: Binding element 'phases' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(265,5): error TS7031: Binding element 'onSelect' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(268,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(268,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(269,25): error TS7006: Parameter 'phase' implicitly has an 'any' type.
+src/ui/webview/PhaseList.tsx(270,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(270,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(275,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(275,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(275,77): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(276,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(276,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PhaseList.tsx(276,62): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(277,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PhaseList.tsx(279,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(8,57): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/ui/webview/PlanViewer.tsx(9,27): error TS6142: Module './PhaseList' was resolved to '/mnt/e/Projects/OpenKode/src/ui/webview/PhaseList.tsx', but '--jsx' is not set.
+src/ui/webview/PlanViewer.tsx(11,27): error TS6133: 'PlanPhase' is declared but its value is never read.
+src/ui/webview/PlanViewer.tsx(44,57): error TS7031: Binding element 'initialPlan' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(62,39): error TS2315: Type 'MessageEvent' is not generic.
+src/ui/webview/PlanViewer.tsx(67,30): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(76,30): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(79,68): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(104,9): error TS2304: Cannot find name 'window'.
+src/ui/webview/PlanViewer.tsx(105,22): error TS2304: Cannot find name 'window'.
+src/ui/webview/PlanViewer.tsx(117,22): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(128,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(137,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(159,63): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(160,22): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(167,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(173,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(178,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(185,41): error TS7006: Parameter 'phase' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(196,56): error TS7006: Parameter 'f' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(209,39): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(218,52): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(228,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(228,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(229,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(229,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(230,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(230,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(230,67): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(231,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(231,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(231,39): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(232,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(232,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(232,63): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(233,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(234,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(239,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(239,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(241,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(241,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(242,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(242,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(243,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(243,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(243,42): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(244,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(244,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(244,81): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(245,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(246,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(246,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(246,81): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(249,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(249,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(250,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(250,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(251,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(251,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(254,26): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(255,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(256,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(256,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(258,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(259,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(260,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(263,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(263,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(264,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(264,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(265,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(265,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(270,36): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(272,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(272,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(275,36): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(277,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(277,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(277,55): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(278,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(278,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(278,56): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(279,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(279,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(279,64): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(280,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(280,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(280,60): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(281,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(281,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(281,54): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(282,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(283,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(284,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(284,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(285,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(285,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(290,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(290,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(290,67): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(291,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(292,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(292,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(297,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(297,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(297,69): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(298,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(299,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(300,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(303,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(303,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(305,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(305,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(307,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(307,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(308,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(308,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(308,79): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(309,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(309,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(309,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(310,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(312,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(320,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(324,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(324,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(325,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(325,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(326,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(326,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(326,60): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(327,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(327,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(329,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(331,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(331,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(332,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(332,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(333,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(333,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(333,73): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(334,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(334,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(336,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(337,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(339,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(339,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(340,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(340,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(340,80): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(341,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(341,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(343,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(344,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(346,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(349,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(349,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(350,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(350,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(350,46): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(351,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(351,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(352,74): error TS7006: Parameter 'file' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(352,80): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(353,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(353,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(354,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(354,49): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(354,90): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(355,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(355,49): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(355,61): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(356,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(358,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(359,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(363,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(363,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(364,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(364,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(364,53): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(365,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(365,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(366,81): error TS7006: Parameter 'dep' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(366,86): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/ui/webview/PlanViewer.tsx(367,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(367,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(368,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(368,49): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(368,85): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(369,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(369,49): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(369,60): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(370,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(372,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(373,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(376,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(376,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(377,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(377,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(383,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(384,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(384,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(384,95): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(388,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(389,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(389,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/PlanViewer.tsx(389,81): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(393,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(394,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(395,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(396,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(398,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(399,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/PlanViewer.tsx(404,14): error TS2584: Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
+src/ui/webview/PlanViewer.tsx(408,22): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(8,66): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/ui/webview/VerificationResults.tsx(61,5): error TS7031: Binding element 'issue' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(62,5): error TS7031: Binding element 'isSelected' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(63,5): error TS7031: Binding element 'isExpanded' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(64,5): error TS7031: Binding element 'onSelect' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(65,5): error TS7031: Binding element 'onExpand' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(66,5): error TS7031: Binding element 'onShowDiff' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(67,5): error TS7031: Binding element 'onApplyFix' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(68,5): error TS7031: Binding element 'onIgnore' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(70,20): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type 'Record<IssueSeverity, { icon: string; label: string; color: string; }>'.
+src/ui/webview/VerificationResults.tsx(99,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(99,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(103,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(103,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(105,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(105,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(109,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(109,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(109,66): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(110,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(113,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(113,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(117,18): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(120,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(120,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(121,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(121,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(121,74): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(122,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(122,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(124,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(125,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(125,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(125,74): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(128,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(132,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(133,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(136,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(136,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(138,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(138,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(143,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(143,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(143,65): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(144,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(146,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(146,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(151,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(151,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(151,62): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(152,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(153,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(154,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(158,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(158,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(160,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(160,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(161,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(161,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(161,44): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(162,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(162,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(162,51): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(163,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(167,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(167,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(168,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(168,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(168,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(169,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(169,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(170,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(170,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(170,58): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(171,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(172,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(176,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(176,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(177,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(177,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(177,46): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(178,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(178,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(179,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(179,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(179,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(180,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(181,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(181,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(182,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(182,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(186,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(186,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(186,74): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(188,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(189,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(189,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(193,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(193,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(193,73): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(195,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(196,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(197,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(201,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(201,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(202,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(202,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(202,63): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(203,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(203,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(203,72): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(204,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(206,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(208,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(222,75): error TS7031: Binding element 'initialResults' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(237,39): error TS2315: Type 'MessageEvent' is not generic.
+src/ui/webview/VerificationResults.tsx(248,32): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(260,39): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(278,9): error TS2304: Cannot find name 'window'.
+src/ui/webview/VerificationResults.tsx(279,22): error TS2304: Cannot find name 'window'.
+src/ui/webview/VerificationResults.tsx(301,38): error TS7006: Parameter 'issue' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(326,32): error TS7006: Parameter 'issue' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(340,42): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(341,44): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(342,41): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(357,27): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(408,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(408,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(409,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(409,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(410,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(410,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(410,57): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(411,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(411,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(411,40): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(412,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(412,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(412,68): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(413,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(414,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(419,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(419,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(421,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(421,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(422,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(422,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(422,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(425,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(425,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(426,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(426,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(427,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(427,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(427,67): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(428,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(428,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(428,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(429,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(430,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(430,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(431,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(431,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(431,67): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(432,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(432,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(432,60): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(433,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(434,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(434,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(435,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(435,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(435,69): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(436,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(436,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(436,62): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(437,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(438,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(438,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(439,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(439,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(439,66): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(440,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(440,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(440,58): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(441,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(442,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(443,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(446,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(446,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(447,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(447,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(448,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(448,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(453,36): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(455,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(455,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(458,36): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(460,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(460,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(460,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(461,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(461,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(461,53): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(462,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(462,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(462,57): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(463,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(463,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(463,50): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(464,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(465,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(466,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(466,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(467,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(467,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(468,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(468,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(471,40): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(474,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(475,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(475,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(476,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(476,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(476,66): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(478,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(479,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(480,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(483,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(483,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(485,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(485,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(486,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(486,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(486,63): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(487,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(487,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(487,56): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(488,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(492,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(492,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(493,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(493,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(494,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(494,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(494,74): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(496,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(496,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(496,65): error TS18046: 'issues' is of type 'unknown'.
+src/ui/webview/VerificationResults.tsx(496,80): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(497,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(498,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(498,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(499,34): error TS18046: 'issues' is of type 'unknown'.
+src/ui/webview/VerificationResults.tsx(499,45): error TS7006: Parameter 'issue' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(500,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(512,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(513,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(517,40): error TS7006: Parameter 'issue' implicitly has an 'any' type.
+src/ui/webview/VerificationResults.tsx(518,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/ui/webview/VerificationResults.tsx(531,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(532,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/ui/webview/VerificationResults.tsx(537,14): error TS2584: Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
+src/ui/webview/VerificationResults.tsx(541,22): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/utils/configManager.ts(166,7): error TS2322: Type 'string | number | boolean' is not assignable to type 'undefined'.
+  Type 'string' is not assignable to type 'undefined'.
+src/utils/configManager.ts(173,30): error TS6133: 'event' is declared but its value is never read.
+src/utils/configManager.ts(181,9): error TS2322: Type 'string | number | boolean' is not assignable to type 'undefined'.
+  Type 'string' is not assignable to type 'undefined'.
+src/utils/fileUtils.ts(22,3): error TS6133: 'createReadStream' is declared but its value is never read.
+src/utils/fileUtils.ts(23,3): error TS6133: 'createWriteStream' is declared but its value is never read.
+src/utils/fileUtils.ts(26,74): error TS6133: 'sep' is declared but its value is never read.
+src/utils/fileUtils.ts(26,79): error TS6133: 'posix' is declared but its value is never read.
+src/utils/gitUtils.ts(254,10): error TS6133: 'execGitCommandAsync' is declared but its value is never read.
+src/verification/diffReviewer.ts(14,3): error TS6133: 'ReviewCategory' is declared but its value is never read.
+src/verification/diffReviewer.ts(19,1): error TS6133: 'join' is declared but its value is never read.
+src/verification/diffReviewer.ts(66,11): error TS6133: 'options' is declared but its value is never read.
+src/verification/diffReviewer.ts(430,5): error TS6133: 'context' is declared but its value is never read.
+src/verification/diffReviewer.ts(566,13): error TS6133: 'hasTest' is declared but its value is never read.
+src/verification/regressionDetector.ts(56,11): error TS6133: 'options' is declared but its value is never read.
+src/verification/regressionDetector.ts(57,11): error TS6133: 'config' is declared but its value is never read.
+src/verification/regressionDetector.ts(477,7): error TS2322: Type '"error" | "pending" | "failed" | "skipped" | "passed"' is not assignable to type '"error" | "failed" | "skipped" | "passed"'.
+  Type '"pending"' is not assignable to type '"error" | "failed" | "skipped" | "passed"'.
+src/verification/regressionDetector.ts(644,22): error TS6133: 'testId' is declared but its value is never read.
+src/verification/securityScanner.ts(16,49): error TS6133: 'statSync' is declared but its value is never read.
+src/verification/securityScanner.ts(55,11): error TS6133: 'options' is declared but its value is never read.
+src/verification/staticAnalysis.ts(14,3): error TS6133: 'CodeRange' is declared but its value is never read.
+src/verification/staticAnalysis.ts(16,20): error TS6133: 'spawn' is declared but its value is never read.
+src/verification/staticAnalysis.ts(17,10): error TS6133: 'readFileSync' is declared but its value is never read.
+src/verification/staticAnalysis.ts(425,35): error TS7016: Could not find a declaration file for module 'glob'. '/mnt/e/Projects/OpenKode/node_modules/glob/glob.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/glob` if it exists or add a new declaration (.d.ts) file containing `declare module 'glob';`
+src/verification/staticAnalysis.ts(563,46): error TS6133: 'summary' is declared but its value is never read.
+src/verification/staticAnalysis.ts(621,16): error TS6133: 'issue' is declared but its value is never read.
+src/verification/testRunner.ts(9,3): error TS6133: 'TestRunResult' is declared but its value is never read.
+src/verification/testRunner.ts(14,3): error TS6133: 'TestError' is declared but its value is never read.
+src/verification/testRunner.ts(21,25): error TS6133: 'relative' is declared but its value is never read.
+src/verification/testRunner.ts(204,35): error TS7016: Could not find a declaration file for module 'glob'. '/mnt/e/Projects/OpenKode/node_modules/glob/glob.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/glob` if it exists or add a new declaration (.d.ts) file containing `declare module 'glob';`
+src/verification/testRunner.ts(538,30): error TS6133: 'output' is declared but its value is never read.
+src/verification/testRunner.ts(687,20): error TS6133: 'onResult' is declared but its value is never read.
+src/verification/verifier.ts(11,3): error TS6133: 'VerificationThresholds' is declared but its value is never read.
+src/verification/verifier.ts(20,3): error TS6133: 'ReviewComment' is declared but its value is never read.
+src/verification/verifier.ts(21,3): error TS6133: 'SecurityIssue' is declared but its value is never read.
+src/verification/verifier.ts(67,11): error TS6133: 'projectRoot' is declared but its value is never read.
+src/verification/verifier.ts(458,11): error TS6133: 'currentStage' is declared but its value is never read.
+src/vibe/modeEngine.ts(10,21): error TS6133: 'LLMClient' is declared but its value is never read.
+src/vibe/modeEngine.ts(14,1): error TS6192: All imports in import declaration are unused.
+src/vibe/modeEngine.ts(15,1): error TS6133: 'getPersona' is declared but its value is never read.
+src/vibe/vibeEngine.ts(63,43): error TS2304: Cannot find name 'GeneratedFile'.

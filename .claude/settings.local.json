@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc --noEmit --skipLibCheck)",
+      "Bash(./node_modules/.bin/tsc --noEmit --skipLibCheck)",
+      "Bash(npm run typecheck)",
+      "Bash(node node_modules/typescript/bin/tsc --noEmit --skipLibCheck)",
+      "Bash(node simple-build.js)",
+      "Bash(node_modules/.bin/tsc --noEmit --skipLibCheck)",
+      "Bash(npm run compile)",
+      "Bash(npm install --save-dev ts-jest @types/jest)",
+      "Bash(npm run lint)",
+      "Bash(node_modules/.bin/eslint src --ext ts)",
+      "Bash(npm install)",
+      "Bash(npm run test:unit)",
+      "Bash(node_modules/.bin/eslint src --ext ts --fix)",
+      "Bash(npx tsc --noEmit -p ./)",
+      "Bash(grep -n \"= ''openai''\" src/orchestration/modelClient.ts)",
+      "Bash(python3 scripts/extract-html.py)",
+      "Bash(python3 scripts/trim-panel.py)",
+      "Bash(rm src/ui/sidebarHtml_body.txt scripts/extract-html.py scripts/trim-panel.py)",
+      "Bash(rmdir scripts)",
+      "Bash(xargs wc -l)",
+      "Bash(for f in src/verification/diffReviewer.ts src/orchestration/stateManager.ts src/spec/specStore.ts src/utils/gitUtils.ts)",
+      "Bash(do echo \"=== $f ===\")",
+      "Read(//e/Projects/OpenKode/**)",
+      "Bash(done)",
+      "Bash(npm install js-yaml @types/js-yaml @octokit/rest)",
+      "Bash(node -e \"require\\(''js-yaml''\\); require\\(''@octokit/rest''\\); console.log\\(''OK''\\)\")",
+      "Bash(node -e \":*)"
+    ]
+  }
+}

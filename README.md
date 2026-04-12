@@ -1,615 +1,270 @@
-
-<!-- OPENKODE EDITION BANNER -->
 <div align="center">
 
-[![OpenKode Free](https://img.shields.io/badge/OpenKode-Free-blue.svg?style=for-the-badge)](https://github.com/open-kode/openkode-free)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+![OpenKode Logo](src/assets/logo/ok.png)
 
-### 🚀 OpenKode Free — Local-first SDD
+# OpenKode Free — 100% Local SDD for VS Code
 
-**100% Open Source • 100% Local LLM • Zero Data Leakage**
+**The Open Source Spec-Driven Development Agent that runs entirely on your machine.**
 
-[Upgrade to Pro](https://open-kode.dev/pro) for smart cloud routing + team features
+[![Version](https://img.shields.io/badge/version-0.1.0--beta-blue.svg)](https://github.com/open-kode/openkode-free/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![VS Code](https://img.shields.io/badge/VS%20Code-^1.85.0-007ACC?logo=visualstudiocode)](https://code.visualstudio.com/)
+[![Ollama](https://img.shields.io/badge/Ollama-Compatible-4f46e5?logo=ollama)](https://ollama.com/)
+[![LM Studio](https://img.shields.io/badge/LM%20Studio-Compatible-10b981)](https://lmstudio.ai/)
+
+**Plan → Execute → Verify** with zero vibe coding.\
+**Zero data leakage.** Your code never leaves your machine.
+
+[📦 Install from VSIX](#quick-start) • [📖 Documentation](https://open-kode.dev/docs) • [🐛 Issues](https://github.com/open-kode/openkode-free/issues)
+
+---
 
 </div>
 
----
+## 🎯 What is OpenKode?
 
-# OpenKode Free — Local-first SDD
+OpenKode is a **Spec-Driven Development (SDD)** orchestration layer that sits above your favorite AI coding tools (Cursor, Claude Code, Windsurf, etc.).
 
-The fully open-source VS Code extension that enforces **Spec-Driven Development** (SDD):  
-Plan → Execute → Verify with zero vibe coding.
-
-**100% local LLM only** (Ollama, LM Studio, llama.cpp).  
-Upgrade to OpenKode Pro for smart cloud routing, team features, and backend relay → [open-kode.dev/pro](https://open-kode.dev/pro)
-
----
-
-[![Version](https://img.shields.io/badge/version-0.1.0--beta-blue.svg)](https://github.com/openkode/openkode-free)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![VS Code](https://img.shields.io/badge/VS%20Code-^1.85.0-007ACC?logo=visualstudiocode)](https://code.visualstudio.com/)
-[![Local LLM](https://img.shields.io/badge/Local%20LLM-Ollama%20%7C%20LM%20Studio-green)](https://ollama.com/)
-
-> **The only SDD orchestration layer with true Bring-Your-Own-LLM — Cloud OR fully local, zero data leakage.**
-
-![OpenKode hero banner](https://raw.githubusercontent.com/openkode/openkode-vscode/main/src/assets/logo/img/banner.png)
-
----
-
-## Why OpenKode?
-
-AI coding tools (Cursor, Claude Code, Windsurf) are _execution_ engines. They write code fast. But they all share the same fatal flaw: **vibe coding** — they skip planning, skip acceptance criteria, and skip verification. You get code that works *now* but breaks *tomorrow*.
-
-OpenKode is the **outer loop** that wraps your AI agents with senior-engineer discipline:
+Instead of jumping straight to code, OpenKode enforces a structured workflow:
 
 ```
-You describe the task
-     │
-     ▼
-OpenKode generates a Spec + Acceptance Criteria
-     │
-     ▼
-Your AI agent (Cursor / Claude Code / Windsurf) implements it
-     │
-     ▼
-OpenKode's LLM Verifier checks the diff against the spec
-     │
-     ▼
-Score ≥ threshold → ✅ Ship  │  Score < threshold → 🔁 Fix
+┌─────────────────────────────────────────────────────────────┐
+│  You describe the feature or bug fix                        │
+│                      ↓                                      │
+│  OpenKode generates a Spec + Acceptance Criteria            │
+│                      ↓                                      │
+│  Your AI agent implements (Cursor/Claude Code/Windsurf)     │
+│                      ↓                                      │
+│  OpenKode verifies the diff against the spec                │
+│                      ↓                                      │
+│  Score ≥ threshold → ✅ Ship  │  Score < threshold → 🔁 Fix  │
+└─────────────────────────────────────────────────────────────┘
 ```
 
----
+## ✨ Features
 
-## Features
+### 🔒 100% Private & Local
 
-### 🔌 True BYO-LLM Router
+- **Zero cloud dependencies** — everything runs on your machine
+- **No API keys required** — uses Ollama, LM Studio, or llama.cpp
+- **No data leakage** — your code never leaves your machine
+- **Works offline** — no internet connection required
 
-Run **fully local** (zero cloud, zero data leakage) or plug in your cloud key — or use the OpenKode managed relay for teams. Switch between providers in one click.
+### 🧩 Four Workflow Modes
 
-| Mode | Providers | Data stays local? | Edition |
-|------|-----------|:-----------------:|:-------:|
-| **Local** | Ollama, LM Studio, llama.cpp | ✅ Yes | Free + Pro |
-| **Cloud Key** | OpenAI, Anthropic, xAI, Gemini | ❌ No | Pro only |
-| **OpenKode Relay** | Managed Pro/Team plan | ❌ No | Pro only |
+| Mode | Icon | Best For | Default Model |
+|------|------|----------|---------------|
+| **Precision** | 🎯 | Bug fixes, refactors, small features | Qwen2.5-Coder 32B |
+| **Blueprint** | 📐 | New features, architecture planning | Qwen2.5-Coder 32B |
+| **Visionary** | 🔮 | Research, exploration, discovery | Qwen2.5-Coder 32B |
+| **Rocket** | 🚀 | Fast iterations, prototyping | Qwen2.5-Coder 7B |
 
-> **Free edition** locks to Local mode. Selecting Cloud Key or Relay shows an upgrade prompt.  
-> Switch with **Ctrl+Shift+O → Select LLM Provider**
+### 🤖 Agent Handoff
 
----
+Works with any AI coding agent:
+- **Cursor** — copy handoff prompt, paste into Composer
+- **Claude Code** — one-click handoff with XML-formatted prompts
+- **Windsurf** — Cascade integration
+- **Custom agents** — any CLI tool that accepts text input
 
-### 🧩 4 Workflow Modes
+### ✅ Intelligent Verification
 
-| Mode | Icon | Best For | Default LLM |
-|------|------|----------|------------|
-| **Precision** | 🎯 | Architecture decisions, complex refactors | Cloud / Claude 3.7 Sonnet |
-| **Blueprint** | 📐 | Spec authoring, planning new features | Local / Qwen2.5-Coder 32B |
-| **Visionary** | 🔮 | Product ideation, research | Cloud / Claude 3.7 Sonnet |
-| **Rocket** | 🚀 | Fast iteration, bug fixes, small tasks | Local / Qwen2.5-Coder 32B |
+After your agent writes code, OpenKode:
+- Captures the `git diff`
+- Compares implementation against the spec
+- Scores: Critical (−20), Warning (−5), Info (−1), Praise (+2)
+- Threshold: 70/100 to pass
 
-Each mode applies a **Model Profile** — you can customise which LLM drives each mode from the sidebar.
+### 🔍 Auto-Discovery
 
----
-
-### 🤖 Agent Handoff (Cursor · Claude Code · Windsurf · Custom)
-
-OpenKode generates a context-rich handoff prompt that includes:
-- Active workflow mode and LLM being used
-- Current spec and acceptance criteria
-- Relevant code context from the open editor
-- Per-agent instruction style (Cursor uses rules syntax, Claude Code uses XML tags, etc.)
-
-The prompt is copied to your clipboard so you can paste it into any agent with one keystroke.
-
-**Keyboard shortcut**: `Ctrl+Shift+H` while code is selected.
-
----
-
-### ✅ LLM Verification Engine
-
-After your agent writes code, OpenKode captures the `git diff` and sends it — alongside the spec — to a senior-engineer LLM reviewer. Results appear in the **Verification** sidebar panel and inline as VS Code diagnostics.
-
-| Severity | Score Impact | Shown As |
-|----------|-------------|----------|
-| Critical | −20 pts each | Error diagnostic |
-| Warning | −5 pts each | Warning diagnostic |
-| Info | −1 pt each | Info hint |
-| Praise | +2 pts each (capped at 10) | — |
-
-Score threshold default: **70/100** (configurable). Auto-verify on save is toggleable.
-
----
-
-### 🖼️ Screenshots
-
-> *(Beta placeholders — full screenshots coming in v1.0)*
-
-- **Sidebar**: Model Profiles tree + Verification report panel
-- **Notification**: `OpenKode Verify: 82/100 — Minor issues found [View Report]`
-- **Status bar**: `$(cpu) Local • qwen2.5-coder:32b` | `$(pass) Verify: 82/100`
-
----
-
-## Quick Start — 60-Second Demo
-
-1. **Install** the extension from the Marketplace (or press `F1` → *Extensions: Install from VSIX*)
-2. **Open the welcome screen**: `F1` → *OpenKode: Welcome / Quick Start*
-3. **Choose your LLM**: Click the status bar chip or press `Ctrl+Shift+O` → *Select LLM Provider*
-4. **Run the built-in demo**: `F1` → *OpenKode: Run Full SDD Demo Cycle*  
-   Watch OpenKode generate a spec, hand it off to a mock agent, and verify the result — all in under 60 seconds.
-5. **Open your real project** and press `F1` → *OpenKode: Open OpenKode UI* to start your first spec.
-
----
-
-## BYO-LLM Setup Guide
-
-### Local — Ollama (recommended for privacy)
-
-```bash
-# 1. Install Ollama   https://ollama.com
-curl -fsSL https://ollama.com/install.sh | sh
-
-# 2. Pull a coding model
-ollama pull qwen2.5-coder:32b   # 20 GB — best quality
-ollama pull qwen2.5-coder:7b    # 4 GB  — fast and lightweight
-
-# 3. Verify it is running
-curl http://localhost:11434/api/tags
-```
-
-In VS Code settings (`Ctrl+,`):
-```json
-"openkode.llmProvider": "local",
-"openkode.local.provider": "ollama",
-"openkode.local.model": "qwen2.5-coder:32b"
-```
-
-### Local — LM Studio
-
-1. Download [LM Studio](https://lmstudio.ai) and start the local server (port 1234)
-2. Set `"openkode.local.provider": "lmstudio"` in settings
-
-### Cloud — Anthropic Claude
-
-```json
-"openkode.llmProvider": "cloud-key",
-"openkode.cloud.provider": "anthropic",
-"openkode.cloud.model": "claude-3-7-sonnet-20250219"
-```
-
-Then run `F1` → *OpenKode: Select LLM Provider* → **Cloud Key** to securely enter your API key (stored in VS Code SecretStorage, never in plain text).
-
----
-
-## Keyboard Shortcuts
-
-| Action | Windows/Linux | macOS |
-|--------|--------------|-------|
-| Open OpenKode UI | `Ctrl+Shift+O` | `Cmd+Shift+O` |
-| Run Verification | `Ctrl+Shift+V` | `Cmd+Shift+V` |
-| Handoff to Cursor | `Ctrl+Shift+H` | `Cmd+Shift+H` |
-
-Right-click any selected code to get the **OpenKode** context menu with all handoff + verify options.
-
----
-
-
-
-## Extension Settings
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `openkode.llmProvider` | `local` | `local` \| `cloud-key` \| `openkode-relay` |
-| `openkode.local.provider` | `ollama` | `ollama` \| `lmstudio` \| `llamacpp` |
-| `openkode.local.model` | `qwen2.5-coder:32b` | Model name for local server |
-| `openkode.cloud.provider` | `openai` | `openai` \| `anthropic` \| `xai` \| `gemini` |
-| `openkode.cloud.model` | `claude-3.7-sonnet` | Cloud model name |
-| `openkode.verification.autoVerifyOnSave` | `false` | Auto-verify on file save |
-| `openkode.verification.scoreThreshold` | `70` | Minimum passing score (0–100) |
-| `openkode.telemetry.enabled` | `false` | Anonymous usage telemetry (opt-in) |
-
----
-
-## Privacy
-
-- **Local mode**: 100% private. Your code never leaves your machine.
-- **Cloud-key mode**: your API key is stored in VS Code's encrypted [SecretStorage](https://code.visualstudio.com/api/references/vscode-api#SecretStorage). OpenKode itself never touches it beyond forwarding to the provider you chose.
-- **Telemetry**: Disabled by default. When opted in, only anonymous event names are sent (e.g. `verification.run`) — no code, no prompts, no file names, no personal data.
-
----
-
-## Contributing
-
-```bash
-git clone https://github.com/openkode/openkode-vscode
-cd openkode-vscode/OpenKode-FrontEnd
-npm install
-npm run compile
-# Press F5 in VS Code to launch Extension Development Host
-```
-
-Issues and PRs welcome: [github.com/openkode/openkode-vscode/issues](https://github.com/openkode/openkode-vscode/issues)
-
----
-
-## License
-
-MIT © OpenKode Contributors
-
-OpenKode is an AI-powered **Spec-Driven Development (SDD)** platform that functions as an "outer loop" orchestration layer sitting above your existing AI coding agents (Cursor, Claude Code, Windsurf, etc.). Rather than replacing your coding tools, OpenKode upgrades them with structured planning, verification, and workflow management.
-
-## 🎯 Core Philosophy
-
-OpenKode addresses the fundamental flaw in most AI coding tools: "vibe coding" where agents immediately jump to implementation without understanding the full context. OpenKode enforces a **Plan → Execute → Verify** workflow that mirrors how senior engineers actually work.
-
-## ✨ Key Features
-
-### 1. Multi-Model Architecture (Ensemble AI)
-
-OpenKode doesn't rely on a single LLM. Instead, it uses a team of specialized models:
-
-| Role | Purpose |
-|------|---------|
-| **Planner** | High-level task decomposition, spec creation, architecture decisions |
-| **Verifier** | Code review, regression detection, debugging, plan alignment checks |
-| **Scout** | Fast parallel codebase scanning, file discovery, relevance ranking |
-| **Researcher** | External documentation lookup, library patterns, web search |
-| **Summarizer** | Context compression, tool output processing |
-
-### 2. Four Workflow Modes
-
-OpenKode provides four primary workflows based on task complexity:
-
-#### 🎯 Precision Mode
-Single-phase tactical changes with detailed implementation specs. Perfect for:
-- Bug fixes
-- Small feature additions
-- Refactoring tasks
-- Quick optimizations
-
-#### 🏗️ Blueprint Mode
-Multi-phase decomposition for complex features. Example:
-```
-"Add Stripe integration" 
-→ Backend API → Payment Service → Frontend → Testing → Documentation
-```
-
-#### 🔭 Visionary Mode
-High-level intent capture with ticket generation and end-to-end execution tracking. Ideal for:
-- Major features
-- Architectural changes
-- Cross-cutting concerns
-
-#### 🚀 Rocket Mode
-Fully automated execution where OpenKode iterates through phases automatically with minimal human intervention.
-
-### 3. Spec-Driven Development Pipeline
-
-The core workflow follows a strict 5-step process:
-
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│ Intent Capture  │────▶│ Phase Decompose  │────▶│ Tactical Plan   │
-│    (PRD)        │     │                  │     │                 │
-└─────────────────┘     └──────────────────┘     └─────────────────┘
-                                                          │
-┌─────────────────┐     ┌──────────────────┐              │
-│   Verification  │◀────│  Agent Handoff   │◀─────────────┘
-│                 │     │                  │
-└─────────────────┘     └──────────────────┘
-```
-
-### 4. Agent-Agnostic Integration
-
-OpenKode supports 15+ AI agents including:
-
-- **Cursor**, **Claude Code**, **Windsurf**
-- **Codex CLI**, **Gemini CLI**
-- **Aider**, **Continue**
-- Custom CLI agents with environment variable injection (`OPENKODE_PROMPT`, `OPENKODE_PHASE_ID`, etc.)
-
-### 5. Context-Aware Codebase Analysis
-
-- **Intelligent file discovery**: Ranks relevant files across large codebases
-- **Dependency graph understanding**: Identifies which functions need changes
-- **Context preservation**: Maintains project understanding across phases
-- **Change tracking**: Detailed logs with rollback capabilities
-
-### 6. Verification & Quality Guardrails
-
-Unlike simple linting, OpenKode's verification checks:
-
-- ✅ **Plan alignment**: Did the implementation match the spec?
-- ✅ **Regression detection**: Did the agent break existing functionality?
-- ✅ **Security analysis**: Injection risks, auth issues, secret exposure
-- ✅ **Architectural integrity**: Modularity, coupling, abstraction boundaries
-- ✅ **Test execution**: Automated test running and validation
+- **Intelligent file discovery** — ranks relevant files in large codebases
+- **Dependency graph** — understands which functions need changes
+- **AST parsing** — analyzes your code structure
+- **Symbol indexing** — fast codebase search
 
 ## 🚀 Quick Start
 
-### Installation
+### 1. Install the Extension
 
 ```bash
-# From VSCode Marketplace (when available)
-code --install-extension openkode
+# Download the latest release
+wget https://github.com/open-kode/openkode-free/releases/download/v0.1.0-beta/openkode-free-0.1.0-beta.vsix
 
-# Or from VSIX
-code --install-extension openkode-0.1.0.vsix
+# Install in VS Code
+code --install-extension openkode-free-0.1.0-beta.vsix
 ```
 
-### Usage
+Or install from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=openkode.openkode-free) (coming soon).
 
-1. **Open the OpenKode panel** from the activity bar (icon: 🔷)
+### 2. Start Your Local LLM
 
-2. **Select a mode** in the sidebar chat panel
-   (Precision / Blueprint / Visionary / Rocket)
+**Option A: Ollama (Recommended)**
+```bash
+# Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
 
-3. **Follow the workflow**:
-   - Describe your intent
-   - Review the generated spec
-   - Approve for execution
-   - Verify the results
+# Pull a coding model
+ollama pull qwen2.5-coder:32b
+
+# Start the server
+ollama serve
+```
+
+**Option B: LM Studio**
+1. Download [LM Studio](https://lmstudio.ai)
+2. Start the local server on port 1234
+
+**Option C: llama.cpp**
+```bash
+./server -m your-model.gguf --port 8080
+```
+
+### 3. Open OpenKode
+
+Press `Ctrl+Shift+O` (or `Cmd+Shift+O` on Mac) to open the OpenKode panel.
+
+### 4. Run the Demo
+
+Press `Ctrl+Shift+P` → "OpenKode: Run Full SDD Demo Cycle" to see it in action.
+
+## 💡 Usage Examples
+
+### Example 1: Fix a Bug
+
+```
+🎯 Precision Mode
+
+You: "Fix the null pointer exception in user authentication"
+
+OpenKode generates:
+┌─ Spec: Fix NPE in AuthService.login() ─┐
+│ Files to touch:                         │
+│  - src/auth/AuthService.java            │
+│  - src/auth/UserRepository.java         │
+│                                         │
+│ Acceptance Criteria:                    │
+│  ✓ Handle null user object              │
+│  ✓ Return 401 for invalid credentials   │
+│  ✓ Log security event                   │
+└─────────────────────────────────────────┘
+
+[Handoff to Cursor] → [Agent implements] → [Verify: 85/100 ✅]
+```
+
+### Example 2: Add a Feature
+
+```
+📐 Blueprint Mode
+
+You: "Add Stripe payment integration"
+
+OpenKode generates 4 phases:
+┌─ Phase 1: Backend API ─────────────────┐
+┌─ Phase 2: Payment Service ─────────────┐
+┌─ Phase 3: Frontend Integration ────────┐
+┌─ Phase 4: Testing & Documentation ─────┐
+
+Each phase has tickets, specs, and handoff prompts.
+```
+
+## 🎹 Keyboard Shortcuts
+
+| Action | Windows/Linux | macOS |
+|--------|---------------|-------|
+| Open OpenKode UI | `Ctrl+Shift+O` | `Cmd+Shift+O` |
+| Run Verification | `Ctrl+Shift+V` | `Cmd+Shift+V` |
+| Handoff to Agent | `Ctrl+Shift+H` | `Cmd+Shift+H` |
 
 ## ⚙️ Configuration
 
-Configure OpenKode through VSCode settings (`Ctrl+,` → search "OpenKode"):
+Open VS Code settings (`Ctrl+,`) and search for "openkode":
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| `openkode.enabled` | Enable OpenKode extension | `true` |
-| `openkode.aiProvider` | AI provider | `"openai"` |
-| `openkode.model` | AI model to use | `gpt-4` |
-| `openkode.logLevel` | Logging level (`debug`/`info`/`warn`/`error`) | `info` |
-
-API keys are stored securely in the VS Code secrets store, not in settings.
-
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        OpenKode Extension                        │
-├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────────────┐  │
-│  │   Precision Mode │  │ Blueprint Mode │  │ Visionary Mode │ Rocket Mode │  │
-│  └──────┬──────┘  └──────┬──────┘  └─────────────────────────┘  │
-│         │                │                                       │
-│  ┌──────▼────────────────▼────────────────────────────────────┐  │
-│  │              Spec-Driven Development Pipeline               │  │
-│  │  Intent → Decompose → Plan → Handoff → Verify              │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│         │                                                        │
-│  ┌──────▼────────────────────────────────────────────────────┐  │
-│  │              Multi-Agent Orchestration Engine               │  │
-│  │  Router │ State Manager │ Parallel Executor │ Model Client  │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│         │                                                        │
-│  ┌──────▼────────────────────────────────────────────────────┐  │
-│  │              Codebase Intelligence Layer                    │  │
-│  │  File Discovery │ AST Parser │ Dependencies │ Vector Search │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│         │                                                        │
-│  ┌──────▼────────────────────────────────────────────────────┐  │
-│  │              Verification & Quality Guardrails              │  │
-│  │  Diff Review │ Regression │ Static Analysis │ Security      │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│         │                                                        │
-│  ┌──────▼────────────────────────────────────────────────────┐  │
-│  │              Agent Handoff Protocol                         │  │
-│  │  Cursor │ Claude Code │ Windsurf │ Custom CLI Agents       │  │
-│  └────────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
+```json
+{
+  "openkode.llmProvider": "local",
+  "openkode.local.provider": "ollama",
+  "openkode.local.ollamaHost": "http://localhost:11434",
+  "openkode.local.model": "qwen2.5-coder:32b",
+  "openkode.verification.autoVerifyOnSave": false,
+  "openkode.verification.scoreThreshold": 70
+}
 ```
 
-## 📁 Project Structure
+## 🆚 OpenKode Free vs Pro
 
-```
-openkode/
-├── src/
-│   ├── extension.ts              # Main entry point
-│   ├── core/
-│   │   ├── openkode.ts           # Main OpenKode class
-│   │   └── workflowModes.ts      # 4 workflow modes
-│   ├── orchestration/
-│   │   ├── router.ts             # Multi-model router
-│   │   ├── stateManager.ts       # Workflow state machine
-│   │   ├── parallelExecutor.ts   # Parallel execution
-│   │   ├── contextManager.ts     # Context optimization
-│   │   └── modelClient.ts        # LLM client
-│   ├── spec/
-│   │   ├── intentCapture.ts      # Intent/PRD capture
-│   │   ├── decomposer.ts         # Phase decomposition
-│   │   ├── tacticalPlanner.ts    # Tactical planning
-│   │   ├── specValidator.ts      # Spec validation
-│   │   └── specStore.ts          # Spec storage
-│   ├── codebase/
-│   │   ├── fileDiscovery.ts      # File discovery
-│   │   ├── astParser.ts          # AST parsing
-│   │   ├── dependencyGraph.ts    # Dependency analysis
-│   │   ├── vectorSearch.ts       # Semantic search
-│   │   ├── symbolIndex.ts        # Symbol indexing
-│   │   └── contextAssembler.ts   # Context assembly
-│   ├── verification/
-│   │   ├── diffReviewer.ts       # Diff review
-│   │   ├── regressionDetector.ts # Regression detection
-│   │   ├── staticAnalysis.ts     # Static analysis
-│   │   ├── securityScanner.ts    # Security scanning
-│   │   ├── testRunner.ts         # Test execution
-│   │   └── verifier.ts           # Main verifier
-│   ├── agent-handoff/
-│   │   ├── agentRegistry.ts      # Agent registration
-│   │   ├── handoffProtocol.ts    # Handoff protocol
-│   │   ├── cursorIntegration.ts  # Cursor integration
-│   │   ├── claudeCodeIntegration.ts # Claude Code
-│   │   ├── customAgent.ts        # Custom agents
-│   │   └── resultParser.ts       # Result parsing
-│   ├── ui/
-│   │   ├── planViewer.ts         # Plan viewer panel
-│   │   ├── epicTreeProvider.ts   # Epic tree view
-│   │   ├── verificationPanel.ts  # Verification panel
-│   │   ├── statusBar.ts          # Status bar
-│   │   └── webview/              # React components
-│   ├── types/
-│   │   └── index.ts              # Type definitions
-│   └── utils/
-│       ├── logger.ts             # Logging
-│       ├── fileUtils.ts          # File operations
-│       ├── gitUtils.ts           # Git operations
-│       ├── configManager.ts      # Configuration
-│       └── errorHandler.ts       # Error handling
-├── package.json                  # Extension manifest
-├── tsconfig.json                 # TypeScript config
-├── esbuild.js                    # Build script
-└── README.md                     # This file
-```
+| Feature | Free | Pro |
+|---------|:--:|:--:|
+| Local LLM (Ollama/LM Studio) | ✅ | ✅ |
+| 4 Workflow Modes | ✅ | ✅ |
+| Agent Handoff | ✅ | ✅ |
+| Verification Engine | ✅ | ✅ |
+| Auto-Discovery | ✅ | ✅ |
+| Cloud LLM (OpenAI, Claude) | ❌ | ✅ |
+| Smart OpenRouter | ❌ | ✅ |
+| Backend Relay | ❌ | ✅ |
+| Team Collaboration | ❌ | ✅ |
+| Priority Support | ❌ | ✅ |
+| **Price** | **Free** | **$15/mo** |
+
+## ⬆️ Upgrade to OpenKode Pro
+
+Need cloud LLMs, intelligent model routing, or team features?
+
+### **[Upgrade to OpenKode Pro →](https://open-kode.dev/pro)**
+
+**Pro includes:**
+- ☁️ **Cloud LLM support** — OpenAI GPT-4, Claude 3, Gemini Pro
+- 🧠 **Smart OpenRouter** — auto-select cheapest capable model
+- 🌐 **Backend Relay** — managed team keys with usage tracking
+- 👥 **Team collaboration** — shared specs, audit logs
+- 🎟️ **Priority support** — dedicated Slack channel
+
+**Pricing:**
+- **Pro Individual:** $15/month
+- **Pro Team:** $29/user/month
+
+---
 
 ## 🛠️ Development
 
-### Prerequisites
-
-- Node.js 18+
-- VSCode 1.85+
-- npm or yarn
-
-### Setup
-
 ```bash
 # Clone the repository
-git clone https://github.com/openkode/openkode-vscode.git
-cd openkode-vscode
+git clone https://github.com/open-kode/openkode-free.git
+cd openkode-free
 
 # Install dependencies
 npm install
 
-# Compile
+# Build the extension
 npm run compile
 
-# Watch mode for development
+# Run in development mode
 npm run watch
-```
-
-### Testing
-
-```bash
-# Run tests
-npm test
-
-# Run with coverage
-npm run test:coverage
-```
-
-### Packaging
-
-```bash
-# Package as VSIX
-npm run package
-
-# Or use vsce directly
-vsce package
-```
-
-### Debug
-
-1. Open the project in VSCode
-2. Press `F5` to launch the Extension Development Host
-3. Test the extension in the new window
-
-## 📝 Example Workflows
-
-### Precision Mode Example
-
-```typescript
-// User input: "Add input validation to the login form"
-
-// Generated Spec:
-{
-  "intent": "Add input validation to login form",
-  "filesToTouch": [
-    "src/components/LoginForm.tsx",
-    "src/utils/validation.ts",
-    "src/tests/LoginForm.test.tsx"
-  ],
-  "interfaces": {
-    "ValidationRule": "interface ValidationRule { field: string; rules: string[]; }"
-  },
-  "steps": [
-    "Add email validation function",
-    "Add password validation function",
-    "Integrate validation into LoginForm",
-    "Add error message display",
-    "Write tests"
-  ],
-  "acceptanceCriteria": [
-    "Email must be valid format",
-    "Password must be 8+ characters",
-    "Errors display inline"
-  ]
-}
-```
-
-### Blueprint Mode Example
-
-```typescript
-// User input: "Implement user authentication with JWT"
-
-// Generated Phases:
-[
-  {
-    "name": "Backend API",
-    "tickets": [
-      "Create auth middleware",
-      "Implement login endpoint",
-      "Implement register endpoint",
-      "Add JWT token generation"
-    ]
-  },
-  {
-    "name": "Database",
-    "tickets": [
-      "Create users table",
-      "Add password hashing",
-      "Create refresh tokens table"
-    ]
-  },
-  {
-    "name": "Frontend",
-    "tickets": [
-      "Create login page",
-      "Create register page",
-      "Add auth context",
-      "Implement protected routes"
-    ]
-  },
-  {
-    "name": "Testing",
-    "tickets": [
-      "Unit tests for auth service",
-      "Integration tests for API",
-      "E2E tests for login flow"
-    ]
-  }
-]
+# Press F5 in VS Code
 ```
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md).
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- 🐛 [Report bugs](https://github.com/open-kode/openkode-free/issues)
+- 💡 [Request features](https://github.com/open-kode/openkode-free/issues)
+- 🔀 [Submit PRs](https://github.com/open-kode/openkode-free/pulls)
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT © OpenKode Contributors
 
-
-## 📞 Support
-
-- 🐛 [Report bugs](https://github.com/openkode/openkode-vscode/issues)
-- 💡 [Request features](https://github.com/openkode/openkode-vscode/issues)
-- 💬 [Discussions](https://github.com/openkode/openkode-vscode/discussions)
+See [LICENSE](LICENSE) for details.
 
 ---
 
-**Happy Coding with OpenKode! 🚀**
+<div align="center">
+
+**[⭐ Star this repo](https://github.com/open-kode/openkode-free)** if you find it useful!
+
+Built with ❤️ by the OpenKode team
+
+[Website](https://open-kode.dev) • [Twitter](https://twitter.com/openkode) • [Discord](https://discord.gg/openkode)
+
+</div>
